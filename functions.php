@@ -6,6 +6,17 @@
  * @package Ezechiasz_Theme
  */
 
+function ezechiasz_theme_setup()
+{
+
+    // Rejestracja lokalizacji menu nawigacyjnego
+    register_nav_menus(array(
+        'primary' => __('Główne Menu', 'ezechiasz-theme'),
+    ));
+}
+
+add_action('after_setup_theme', 'ezechiasz_theme_setup');
+
 function ezechiasz_theme_enqueue_styles()
 {
 
