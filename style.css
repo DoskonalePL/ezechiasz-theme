@@ -45,3 +45,47 @@ h1, h2 {
     font-weight: 600;
     line-height: 1.2;
 }
+
+/*--------------------------------------------------------------
+>>> Navigation Menu
+--------------------------------------------------------------*/
+/* Kontener nawigacji wygenerowany przez wp_nav_menu() */
+.menu-glowne-menu-container {
+    width: 100%;
+    margin-top: 1em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Usuwamy domyślne style listy (punktory, wcięcia) */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Magia! Układamy elementy w jednej linii */
+}
+
+/* Każdy element listy */
+nav li {
+    margin-right: 1.5em; /* Odstęp między pozycjami menu */
+}
+
+/* Linki w menu */
+nav a {
+    display: block; /* Robimy z linku blok, aby łatwiej go klikać */
+    padding: 1em 0;
+    color: #555;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Płynne przejście koloru */
+}
+
+/* Efekt po najechaniu myszką */
+nav a:hover {
+    color: #0073aa; /* Zmieniamy kolor po najechaniu */
+}
+
+/* Klasa dla aktywnej, bieżącej strony */
+.current-menu-item a {
+    color: #000;
+    border-bottom: 2px solid #0073aa;
+}
