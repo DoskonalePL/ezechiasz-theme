@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<header class="archive-header">
+    <?php
+    the_archive_title('<h1 class="archive-title">', '</h1>');
+    the_archive_description('<div class="archive-description">', '</div>');
+    ?>
+</header>
+
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
         <article>
@@ -15,10 +22,6 @@
                     <?php the_title(); ?>
                 </a>
             </h2>
-            <div class="post-meta">
-                <span><?php echo get_the_date(); ?></span>
-                <span>w: <?php the_category(', '); ?></span>
-            </div>
             <div><?php the_excerpt(); ?></div>
         </article>
     <?php endwhile; ?>

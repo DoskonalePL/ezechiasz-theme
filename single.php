@@ -12,6 +12,7 @@
             <div class="post-meta">
                 <span>Opublikowano: <?php echo get_the_date(); ?></span>
                 <span>przez: <?php the_author(); ?></span>
+                <span>w: <?php the_category(', '); ?></span>
             </div>
             <div><?php the_content(); ?></div>
             <?php // Jeśli komentarze są otwarte lub mamy przynajmniej jeden komentarz, wyświetl szablon komentarzy.
