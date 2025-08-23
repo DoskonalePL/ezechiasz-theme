@@ -3,6 +3,11 @@
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
         <article>
+            <?php if (has_post_thumbnail()) : ?>
+                <div class="post-thumbnail">
+                    <?php the_post_thumbnail('large'); ?>
+                </div>
+            <?php endif; ?>
             <h1><?php the_title(); ?></h1>
             <div class="post-meta">
                 <span>Opublikowano: <?php echo get_the_date(); ?></span>

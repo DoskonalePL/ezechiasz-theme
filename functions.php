@@ -13,6 +13,9 @@ function ezechiasz_theme_setup()
     register_nav_menus(array(
         'primary' => __('Główne Menu', 'ezechiasz-theme'),
     ));
+
+    // Dodanie wsparcia dla obrazków wyróżniających
+    add_theme_support('post-thumbnails');
 }
 
 add_action('after_setup_theme', 'ezechiasz_theme_setup');

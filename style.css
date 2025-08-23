@@ -89,3 +89,11 @@ nav a:hover {
     color: #000;
     border-bottom: 2px solid #0073aa;
 }
+
+/* Featured Image */
+.post-thumbnail img {
+    max-width: 100%; /* Obrazek nigdy nie będzie szerszy niż kontener */
+    height: auto; /* Zachowuje proporcje obrazka */
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+}
