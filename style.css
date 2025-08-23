@@ -97,3 +97,8 @@ nav a:hover {
     margin-bottom: 1.5em;
     border-radius: 5px;
 }
+
+/* Read More Link */
+.read-more {
+    font-weight: 600;
+}

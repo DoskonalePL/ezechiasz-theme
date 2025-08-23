@@ -28,3 +28,12 @@ function ezechiasz_theme_enqueue_styles()
 }
 
 add_action('wp_enqueue_scripts', 'ezechiasz_theme_enqueue_styles');
+
+/**
+ * Zmienia domyślne [...] na końcu zajawki na link "Czytaj dalej".
+ */
+function ezechiasz_theme_excerpt_more($more)
+{
+    return '... <a class="read-more" href="' . get_permalink() . '">Czytaj dalej &raquo;</a>';
+}
+add_filter('excerpt_more', 'ezechiasz_theme_excerpt_more');
