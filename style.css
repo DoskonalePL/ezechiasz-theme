@@ -178,3 +178,30 @@ nav a:hover {
 .post-meta span {
     margin-right: 1em;
 }
+
+/*--------------------------------------------------------------
+>>> 404 Error Page
+--------------------------------------------------------------*/
+.error-404-content {
+    text-align: center;
+    padding: 3em 1em;
+}
+
+.error-404-content .search-form {
+    margin: 2em auto;
+    max-width: 500px;
+}
+
+.error-404-content .search-submit {
+    /* Style przycisku wyszukiwania, jeśli potrzebne */
+}
+
+.button-404 {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.7em 1.5em;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
