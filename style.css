@@ -102,3 +102,61 @@ nav a:hover {
 .read-more {
     font-weight: 600;
 }
+
+/*--------------------------------------------------------------
+>>> Comments
+--------------------------------------------------------------*/
+.comments-area {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid #e0e0e0;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-body {
+    padding: 1em;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.comment-meta {
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.comment-author .fn {
+    font-weight: 600;
+    font-style: normal;
+}
+
+.comment-form-comment label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.comment-form textarea,
+.comment-form input {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-submit .submit {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form-submit .submit:hover {
+    background-color: #005a87;
+}

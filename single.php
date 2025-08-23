@@ -14,6 +14,10 @@
                 <span>przez: <?php the_author(); ?></span>
             </div>
             <div><?php the_content(); ?></div>
+            <?php // Jeśli komentarze są otwarte lub mamy przynajmniej jeden komentarz, wyświetl szablon komentarzy.
+            if (comments_open() || get_comments_number()) :
+                comments_template();
+            endif; ?>
         </article>
     <?php endwhile; ?>
 <?php else : ?>
