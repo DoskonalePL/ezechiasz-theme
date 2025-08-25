@@ -205,3 +205,64 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
 }
+/*--------------------------------------------------------------
+>>> Pagination
+--------------------------------------------------------------*/
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid #e0e0e0;
+}
+
+.page-numbers {
+    padding: 0.5em 1em;
+    margin: 0 0.25em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #0073aa;
+}
+
+.page-numbers.current,
+.page-numbers:hover {
+    background-color: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+/*--------------------------------------------------------------
+>>> Layout with Sidebar
+--------------------------------------------------------------*/
+.site-content {
+    display: flex;
+    gap: 2em; /* Odstęp między treścią a sidebarem */
+}
+
+/* Główna treść zajmuje dostępną przestrzeń */
+main {
+    flex: 1; 
+}
+
+/* Pasek boczny */
+.widget-area {
+    width: 300px; /* Stała szerokość paska bocznego */
+    flex-shrink: 0; /* Zapobiega kurczeniu się paska */
+}
+
+.widget {
+    margin-bottom: 2em;
+    background-color: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 5px;
+}
+
+.widget-title {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5em;
+}

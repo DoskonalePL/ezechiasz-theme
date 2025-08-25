@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Prosta strona one-page z ofertą i kontaktem."
+    />
+    <title>K B J S</title>
+
+    <style>
+      /* Reset i bazowe style */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Bona Nova", system-ui, sans-serif;
+        color: #1e293b; /* ciemny granat */
+        background: #f8fafc; /* jasne, neutralne tło */
+        line-height: 1.6;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Nawigacja */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #ffffffee;
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+      }
+      nav a {
+        color: #1e293b;
+        text-decoration: none;
+        margin: 0 0.75rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: #0ea5e9; /* niebieski akcent */
+      }
+      nav img {
+        width: 3rem;
+        border-radius: 50%;
+      }
+
+      /* Sekcje */
+      main > section {
+        min-height: 100vh;
+        padding: 4rem 1rem;
+      }
+      main > section:not(:target) {
+        display: none;
+      }
+      main:not(:has(section:target)) > section#oferta {
+        display: block;
+      }
+
+      /* Nagłówki */
+      h1 {
+        font-size: 2.25rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #0f172a;
+      }
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #0f172a;
+      }
+
+      /* Galeria */
+      #realizacje div {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        padding: 1rem 0;
+      }
+      figure {
+        flex: 0 0 auto;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+      figure:hover {
+        transform: translateY(-4px);
+      }
+      figcaption {
+        font-size: 0.875rem;
+        color: #475569;
+        margin-top: 0.25rem;
+      }
+      img {
+        max-width: 200px;
+        border-radius: 0.25rem;
+      }
+
+      /* Kontakt */
+      #kontakt div {
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+      #kontakt a {
+        color: #0ea5e9;
+        text-decoration: none;
+      }
+      #kontakt a:hover {
+        text-decoration: underline;
+      }
+      iframe {
+        border: none;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      /* Stopka */
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: #1e293b;
+        color: #f8fafc;
+        font-size: 0.875rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <a href="#oferta">Oferta</a>
+        <a href="#realizacje">Realizacje</a>
+      </div>
+      <a href="#"><img src="logo.jpg" alt="Logo" /></a>
+      <div>
+        <a href="#onas">O nas</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </nav>
+
+    <header>
+      <h1>K B J S</h1>
+    </header>
+
+    <main>
+      <section id="oferta">
+        <h2>Oferta</h2>
+        <p style="text-align: center; max-width: 700px; margin: 1rem auto">
+          Oferujemy nowoczesne i dopasowane rozwiązania dla Twojej firmy. Strony
+          internetowe, które budzą zaufanie i pomagają w rozwoju biznesu.
+        </p>
+      </section>
+
+      <section id="realizacje">
+        <h2>Realizacje</h2>
+        <div>
+          <figure>
+            <img src="logo.jpg" alt="Przykład projektu" />
+            <figcaption>Opis projektu</figcaption>
+          </figure>
+          <figure>
+            <img src="logo.jpg" alt="Przykład projektu" />
+            <figcaption>Opis projektu</figcaption>
+          </figure>
+          <figure>
+            <img src="logo.jpg" alt="Przykład projektu" />
+            <figcaption>Opis projektu</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="onas">
+        <h2>O nas</h2>
+        <p style="text-align: center; max-width: 700px; margin: 1rem auto">
+          Jesteśmy zespołem pasjonatów technologii i projektowania. Naszym celem
+          jest tworzenie stron, które nie tylko dobrze wyglądają, ale przede
+          wszystkim wspierają Twój biznes.
+        </p>
+      </section>
+
+      <section id="kontakt">
+        <h2>Kontakt</h2>
+        <div>e-mail: <a href="mailto:a@b.c">a@b.c</a></div>
+        <div>tel.: <a href="tel:+48123456789">123 456 789</a></div>
+        <iframe
+          title="formularz kontaktowy"
+          src="https://klon.pl/mailtest.php"
+          width="100%"
+          height="444"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer>© 2025 K B J S – Wszystkie prawa zastrzeżone</footer>
+  </body>
+</html>
