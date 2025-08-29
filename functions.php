@@ -16,6 +16,17 @@ function ezechiasz_theme_setup()
 
     // Dodanie wsparcia dla obrazków wyróżniających
     add_theme_support('post-thumbnails');
+
+    // Dodanie wsparcia dla własnego logo
+    add_theme_support(
+        'custom-logo',
+        array(
+            'height'      => 100, // Przykładowa sugerowana wysokość w pixelach
+            'width'       => 400, // Przykładowa sugerowana szerokość w pixelach
+            'flex-height' => true,
+            'flex-width'  => true,
+        )
+    );
 }
 
 add_action('after_setup_theme', 'ezechiasz_theme_setup');
