@@ -67,3 +67,56 @@ function ezechiasz_theme_widgets_init()
     );
 }
 add_action('widgets_init', 'ezechiasz_theme_widgets_init');
+
+/**
+ * Dodaje opcje personalizacji motywu do panelu "Dostosuj".
+ *
+ * @param WP_Customize_Manager $wp_customize Obiekt menedżera personalizacji.
+ */
+function ezechiasz_theme_customize_register($wp_customize)
+{
+
+    // 1. Dodaj nową sekcję o nazwie "Kolory"
+    $wp_customize->add_section('ezechiasz_colors', array(
+        'title'    => __('Kolory', 'ezechiasz-theme'),
+        'priority' => 30,
+    ));
+
+    // 2. Zarejestruj ustawienie, które będzie przechowywać nasz kolor
+    $wp_customize->add_setting('ezechiasz_accent_color', array(
+        'default'   => '#0073aa', // Kolor domyślny
+        'transport' => 'refresh', // Sposób odświeżania podglądu (pełne przeładowanie)
+    ));
+
+    // 3. Dodaj kontrolkę (próbnik kolorów) do zmiany tego ustawienia
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ezechiasz_accent_color_control', array(
+        'label'    => __('Główny Kolor Akcentów', 'ezechiasz-theme'),
+        'section'  => 'ezechiasz_colors', // Przypisz do naszej nowej sekcji "Kolory"
+        'settings' => 'ezechiasz_accent_color', // Połącz z naszym nowym ustawieniem
+    )));
+}
+add_action('customize_register', 'ezechiasz_theme_customize_register');
+
+/**
+ * Generuje i wstrzykuje niestandardowe style CSS na podstawie opcji z Customizera.
+ */
+function ezechiasz_theme_customize_css()
+{
+?>
+    <style type="text/css">
+        a,
+        .read-more,
+        .post-meta a:hover,
+        .archive-title {
+            color: <?php echo get_theme_mod('ezechiasz_accent_color', '#0073aa'); ?>;
+        }
+
+        .page-numbers.current,
+        .page-numbers:hover,
+        .form-submit .submit {
+            background-color: <?php echo get_theme_mod('ezechiasz_accent_color', '#0073aa'); ?>;
+        }
+    </style>
+<?php
+}
+add_action('wp_head', 'ezechiasz_theme_customize_css');
